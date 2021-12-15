@@ -22,7 +22,7 @@ true
 ## My thought for solution 1
 Checking the direction of an array is very important. The direction of
 an array could be flat, upwards, and downwards. The key for this question
-is to keep checking whether the array breaks the original direction. Below 
+is to keep checking whether the array breaks the original direction. Below
 is the coding solution for this problem.
 ```python
 #Time O(N), Space O(1)
@@ -30,8 +30,8 @@ is the coding solution for this problem.
 def isMonotonic(array):
     if len(array) <= 2 :
 		return True
-	
-	# direction 
+
+	# direction
 	direction = array[1] - array[0]
 	# loop the array
 	for i in range(2, len(array)):
@@ -51,13 +51,15 @@ def directionBreak(direction, preNum, curNum):
 ```
 
 ## My thought for solution 2
-Solution 1 seems a little bit complicated. In fact, we could use 
+Solution 1 seems a little bit complicated. In fact, we could use
 a more simpler way to solve this problem. We could just
 check whether the array is nondecreasing or nonincreasing. If yes,
 this array should be monotonic. If not, this array should
 not be the monotonic.
 
 ```python
+#Time O(N), Space O(1)
+
 def isMonotonic(array):
     # Write your code here.
     isNonDecrease = True
@@ -69,5 +71,5 @@ def isMonotonic(array):
 		elif diff > 0:
 			isNonIncrease = False
 	return isNonDecrease or isNonIncrease
-	
+
 ```
