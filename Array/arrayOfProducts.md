@@ -1,7 +1,7 @@
 
 # Array Of Product
 
-Write a function that takes in a non-empty array of integers 
+Write a function that takes in a non-empty array of integers
 and returns an array of the same length, where each element
 in the array is equal to the product of every other number
 in the input array.
@@ -33,7 +33,7 @@ def arrayOfProducts(array):
 	return products
 ```
 
-### Solution 2 (Create the Left and Right Array)
+### Solution 2 (Create the Left and Right Array, and Multiply them)
 ```python
 #Time O(n) and Space O(n)
 def arrayOfProducts(array):
@@ -50,14 +50,14 @@ def arrayOfProducts(array):
     for i in reversed(range(len(array))):
         right[i] = right_product
         right_product *= array[i]
-    
+
     for i in range(len(array)):
         products[i] = left[i] * right[i]
     return products
- 
+
 ```
 
-### Solution 3 (Create One Array and Mutiply Existing Elements)
+### Solution 3 (Create One Array and Multiply Existing Elements)
 ```python
 #Time O(n) and Space O(n)
 def arrayOfProducts(array):
@@ -67,14 +67,12 @@ def arrayOfProducts(array):
     for i in range(len(array)):
         products[i] = left_product
         left_product *= array[i]
-    
+
     right_product = 1
     for i in reversed(range(len(array))):
         products[i] *= right_product
         right_product *= array[i]
-    
+
     return products
 
 ```
-
-
