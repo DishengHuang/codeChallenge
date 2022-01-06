@@ -19,7 +19,7 @@ method.
  /       \
 1        14
 
-# case 1 
+# case 1
 insert(12):
       10
      /  \
@@ -29,7 +29,7 @@ insert(12):
  /      / \
 1      12 14
 
-# case 2 
+# case 2
 remove(10):
       12
      /  \
@@ -39,13 +39,13 @@ remove(10):
  /       \
 1        14
 
-# case 3 
+# case 3
 contain(15): true
 ```
 ### My thoughts
-The key to solve this questions are as follows. Basically, 
+The key to solve this questions are as follows. Basically,
 inserting the node and searching the node share the similar
-logic. According to the property of BST, we could 
+logic. According to the property of BST, we could
 compare each node and select the subtree to insert
 or remove the nodes. The difficulty of the remove node is that
 you have to consider different edges case. To be specific,
@@ -60,7 +60,8 @@ class BST:
         self.value = value
         self.left = None
         self.right = None
-
+    # Avg O(log(n)) time / O(1) space
+    # Worst O(n) time / O(1) space
     def insert(self, value):
         currentNode = self
 		while True:
@@ -77,7 +78,8 @@ class BST:
 				else:
 					currentNode = currentNode.right
         return self
-
+    # Avg O(log(n)) time / O(1) space
+    # Worst O(n) time / O(1) space
     def contains(self, value):
         currentNode = self
 		while currentNode is not None:
@@ -88,7 +90,8 @@ class BST:
 			else:
 				return True
 		return False
-				
+    # Avg O(log(n)) time / O(1) space
+    # Worst O(n) time / O(1) space				
     def remove(self, value, parentNode = None):
 		currentNode = self
 		while currentNode is not None:
@@ -114,12 +117,12 @@ class BST:
 					else:
 						pass
 				elif parentNode.left == currentNode:
-					parentNode.left = currentNode.left if currentNode.left is not None else currentNode.right 
+					parentNode.left = currentNode.left if currentNode.left is not None else currentNode.right
 				elif parentNode.right == currentNode:
-					parentNode.right = currentNode.left if currentNode.left is not None else currentNode.right 
+					parentNode.right = currentNode.left if currentNode.left is not None else currentNode.right
 				break
         return self
-	
+
 	def getMinValue(self):
 		currentNode = self
 		while currentNode.left is not None:
