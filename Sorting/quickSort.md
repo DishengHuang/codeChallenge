@@ -10,7 +10,7 @@ Write a function that takes in an array of integers and returns a sorted verison
 ## Sample Input
 
 ```python
-array = [8,5,2,9,6,3]
+array = [8,5,2,9,5,6,3]
 ```
 
 ## Sample Output
@@ -20,8 +20,8 @@ array = [8,5,2,9,6,3]
 ```
 
 ## Solution
-The key to this solution is to find the pivot value and compare it, 
-and sort the small subarray. 
+The key to this solution is to find the pivot value and compare it,
+and sort the small subarray.
 
 ```python
 def quickSort(array):
@@ -53,7 +53,7 @@ def quickSortHelper(array, startIdx, endIdx):
 	else:
 		quickSortHelper(array, rightIdx + 1, endIdx)
 		quickSortHelper(array, startIdx, rightIdx - 1)
-		
+
 def swap(array, i, j):
 	array[i], array[j] = array[j], array[i]
 ```
