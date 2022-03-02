@@ -1,4 +1,4 @@
-
+ 
 # Palindrome Check
 
 Write a function that takes in a non-empty string and that returns a boolean
@@ -18,7 +18,7 @@ string = "abcdcba"
 true // it's written the same forward and backward
 ```
 ## Solution 1
-Create the array to store the reverse string and 
+Create the array to store the reverse string and
 compare the reverse string with the original string
 ```python
 # Time O(n)/ Space O(n)
