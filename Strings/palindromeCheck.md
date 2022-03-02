@@ -1,4 +1,4 @@
- 
+  
 # Palindrome Check
 
 Write a function that takes in a non-empty string and that returns a boolean
