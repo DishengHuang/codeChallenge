@@ -5,25 +5,25 @@ You're given a string of available characters and a string representing
 a document that you need to generate. Write a function that
 determines if you can generate the document using the available
 characters. If you can generate the document, your function should
-return true; otherwise, it should return false. 
+return true; otherwise, it should return false.
 
 
 
 
 ### Sample Input
-```python 
+```python
 characters = "abcabc"
 document = "aabbccc"
 ```
 
 ### Sample Output
-```python 
-false
+```python
+False
 ```
 ### My Solution/Thoughts
-```python 
-#create an dict for one input and substract 
-#the other one to compare 
+```python
+#create an dict for one input and substract
+#the other one to compare
 #Time O(m + n)/ Space O(c)
 def generateDocument(characters, document):
     char_dict = {}
@@ -32,7 +32,7 @@ def generateDocument(characters, document):
 			char_dict[c] += 1
 		else:
 			char_dict[c] = 1
-			
+
 	for d in document:
 		if d in char_dict.keys():
 			char_dict[d] -= 1
