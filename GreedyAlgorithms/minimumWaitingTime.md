@@ -20,8 +20,8 @@ queries = [3,2,1,2,6]
 17
 ```
 
-### Solution
-Firstly, sort the array and then compute the current waiting time 
+### Solution 1
+Firstly, sort the array and then compute the current waiting time
 and add to the total waiting time.
 ```python
 def minimumWaitingTime(queries):
@@ -31,6 +31,19 @@ def minimumWaitingTime(queries):
 	for index in range(len(queries) - 1):
 		current_wait += queries[index]
 		total_wait = total_wait + current_wait
-		
+
     return total_wait
+```
+
+
+### Solution 2
+```python
+#Time O(n)/ Space O(1)
+def minimumWaitingTime(queries):
+	queries.sort()
+    totalWait = 0
+	for idx, value in enumerate(queries):
+		queriesLeft = len(queries) - (idx + 1)
+		totalWait += value*queriesLeft
+	return totalWait
 ```
