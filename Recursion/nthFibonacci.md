@@ -10,7 +10,7 @@ that takes in an integer n and returns the nth Fibonacii number.
 
 ### Solution 1
 This is the navie method. Firstly, define the two base cases and
-then use the recursion 
+then use the recursion
 
 ```python
 def getNthFib(n):
@@ -25,7 +25,7 @@ def getNthFib(n):
 
 ### Solution 2
 This solution is a little bit optimal than the solution 1. This is
-because we introduce the hash table to reduce the depulicated 
+because we introduce the hash table to reduce the depulicated
 computation.
 
 ```python
@@ -40,10 +40,11 @@ def getNthFib(n, memorize = {1: 0, 2: 1}):
 
 ### Solution 3
 We only store the last two numbers and sum those two
-numbers. 
+numbers. This is the most optimal solution. 
 
 ```python
 def getNthFib(n):
+  #Time O(n)/ Space O(1)
 	sum_list = [0, 1]
 	counter = 3
 	while counter <= n:
@@ -53,4 +54,3 @@ def getNthFib(n):
 		counter += 1
 	return 0 if n == 1  else sum_list[1]
 ```
-
