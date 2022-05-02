@@ -1,7 +1,10 @@
 
 # Permutations
 
-A brief description of what this project does and who it's for
+Write a function that takes in an array of unique integers and returns an array of all permutations of those integers
+in no particular order.
+
+if the input array is empty, the function should return an empty array.
 
 
 ### Solution 1
