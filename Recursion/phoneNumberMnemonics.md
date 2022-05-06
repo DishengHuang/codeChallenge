@@ -26,11 +26,12 @@ phoneNumber = "1905"
 
 ```python
 def phoneNumberMnemonics(phoneNumber):
+  #Time O(4^n * n)/ Space O(4^n * n)
 	mnemonicsFound = []
 	currentMnemonics = ["0"] * len(phoneNumber)
-	
+
 	phoneNumberMnemonicsHelper(0, phoneNumber, currentMnemonics, mnemonicsFound)
-	
+
 	return mnemonicsFound
 
 def phoneNumberMnemonicsHelper(idx, phoneNumber, currentMnemonics, mnemonicsFound):
@@ -57,4 +58,3 @@ DIGIT_LETTERS = {
 	"9": ["w","x","y","z"],
 }
 ```
-
